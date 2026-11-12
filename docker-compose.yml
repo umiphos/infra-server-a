@@ -1,7 +1,7 @@
 services:
   caddy:
     image: caddy:2
-    container_name: caddy-global
+    container_name: infra-caddy
     restart: unless-stopped
     env_file:
       - .env
@@ -22,5 +22,5 @@ volumes:
 
 networks:
   proxy_network:
+    external: true
     name: proxy_network
-    driver: bridge
